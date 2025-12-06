@@ -1,0 +1,170 @@
+/* ===== Pixel Game Font (Press Start 2P) ===== */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* ===== Root Theme ===== */
+:root {
+  --xeno-bg: radial-gradient(circle at 0% 0%, #0e1a45 0%, #050817 50%, #1a0430 100%);
+  --xeno-card: rgba(14, 25, 56, 0.85);
+  --xeno-card-soft: rgba(9, 18, 42, 0.75);
+  --xeno-text-main: #f4f7ff;
+  --xeno-text-subtle: #b9c3ff;
+  --xeno-border-soft: rgba(255, 255, 255, 0.15);
+  --xeno-accent: #26ff9a;
+  --xeno-accent-soft: rgba(38, 255, 154, 0.12);
+}
+
+/* ===== Global Reset ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--xeno-bg);
+  color: var(--xeno-text-main);
+}
+
+/* ===== Pixel Game utility classes ===== */
+.pixel-heading {
+  font-family: 'Press Start 2P', cursive;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+}
+
+.pixel-number {
+  font-family: 'Press Start 2P', cursive;
+  letter-spacing: 0.08em;
+  font-size: 0.9rem;
+}
+
+/* ===== Layout: make dashboard narrower & centered ===== */
+.xeno-dashboard-root {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 24px 32px 40px;
+}
+
+/* ===== Cards ===== */
+.xeno-card {
+  background: var(--xeno-card);
+  border-radius: 22px;
+  border: 1px solid var(--xeno-border-soft);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.65);
+}
+
+.xeno-card-soft {
+  background: var(--xeno-card-soft);
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(16px);
+}
+
+/* Top stats cards – compact but readable */
+.xeno-stat-card {
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* ===== Chart sizing – keep graphs big enough ===== */
+.xeno-main-chart {
+  height: 260px;
+}
+
+.xeno-histogram {
+  height: 190px;
+  margin-top: 16px;
+}
+
+.xeno-pie {
+  height: 220px;
+}
+
+/* ===== Typography helpers ===== */
+.xeno-title {
+  color: var(--xeno-text-main);
+  font-weight: 600;
+}
+
+.xeno-subtitle {
+  color: var(--xeno-text-subtle);
+  font-size: 0.9rem;
+}
+
+/* ===== Ranking list (Top revenue days, etc.) ===== */
+.xeno-ranking-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 0.9rem;
+  color: var(--xeno-text-subtle);
+}
+
+.xeno-ranking-row strong {
+  color: var(--xeno-text-main);
+}
+
+/* ===== Buttons / Pills (Metrics fresh, Cart events, etc.) ===== */
+.xeno-pill {
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--xeno-accent-soft);
+  color: var(--xeno-accent);
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+/* Optional: glow on hover for interactive cards/buttons */
+.xeno-card-hoverable {
+  transition: transform 0.18s ease-out, box-shadow 0.18s ease-out, border-color 0.18s ease-out;
+}
+
+.xeno-card-hoverable:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.8);
+  border-color: rgba(38, 255, 154, 0.5);
+}
+
+/* ===== Responsive tweaks ===== */
+@media (max-width: 1100px) {
+  .xeno-dashboard-root {
+    padding: 20px 18px 32px;
+  }
+
+  .xeno-main-chart {
+    height: 230px;
+  }
+
+  .xeno-histogram {
+    height: 170px;
+  }
+
+  .xeno-pie {
+    height: 210px;
+  }
+}
+
+@media (max-width: 768px) {
+  .xeno-dashboard-root {
+    padding: 16px 14px 24px;
+  }
+
+  .xeno-stat-card {
+    height: auto;
+  }
+
+  .pixel-heading {
+    font-size: 0.7rem;
+  }
+
+  .pixel-number {
+    font-size: 0.8rem;
+  }
+}
